@@ -1,0 +1,44 @@
+
+.current-track-card {
+    position: absolute;
+    top: calc(100vh - 455px);
+    left: 80%;
+    width: 350px;
+    height: 400px;
+    flex-direction: column;
+    background: #29155d;
+    border-radius: 20px;
+    margin: auto;
+}
+
+
+.current-track-card__img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.current-track-card__img img{
+    height: 300px;
+    width: 330px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.current-track-card__info {
+    color: white;
+    display: flex;
+    width: 60%;
+    flex-direction: column;
+    margin-left: 20px;
+    overflow: hidden;
+}
+
+
+.current-track-card__title {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 100%;
+}

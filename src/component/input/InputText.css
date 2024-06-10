@@ -1,0 +1,149 @@
+.login-input .container {
+    width: 680px;
+}
+
+.login-input .entryarea {
+    position: relative;
+    height: 65px;
+    line-height: 80px;
+}
+
+.login-input .entry {
+    position: absolute;
+    width: 100%;
+    height: 65px;
+    outline: none;
+    font-size: 1.5rem;
+    padding: 0 20px;
+    line-height: 80px;
+    border-radius: 10px;
+    border: 2px solid #a89faf;
+    box-shadow: 1px 1px 1px 0 #0000003F;
+    background-color: transparent;
+    transition: 0.2s ease;
+    z-index: 1111;
+}
+
+.login-input .entrylabel {
+    position: absolute;
+    font-size: 1.2em;
+    color: #a89faf;
+    padding: 0 15px;
+    margin: -7px 0 0 15px;
+    background: var(--background-light-color);
+    transition: 0.2s ease;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none
+}
+
+.login-input .icon {
+    color: rgba(72, 72, 72, 0.5);
+    transition: 0.2s ease;
+    margin-right: 4px;
+    transform: translate(0, 5px);
+}
+
+.login-input .entry:focus,
+.login-input .entry:valid {
+    border: 2px solid var(--main-color);
+}
+
+.login-input .entry:focus+.entrylabel,
+.login-input .entry:valid+.entrylabel {
+    color: var(--main-color);
+    height: 30px;
+    line-height: 30px;
+    padding: 0 12px;
+    transform: translate(-10px, -8px) scale(0.9);
+    z-index: 1111;
+}
+
+.login-input .entry:focus+.entrylabel .icon,
+.login-input .entry:valid+.entrylabel .icon {
+    color: var(--main-color);
+}
+
+.login-input .error-input,
+.login-input .error-input:focus,
+.login-input .error-input:valid{
+    border: 2px solid var(--error-message-color);
+}
+
+.login-input .error-input+.entrylabel,
+.login-input .error-input:focus+.entrylabel,
+.login-input .error-input:valid+.entrylabel{
+    color: var(--error-message-color);
+}
+
+.login-input .error-input+.entrylabel .icon,
+.login-input .error-input:focus+.entrylabel .icon,
+.login-input .error-input:valid+.entrylabel .icon{
+    color: var(--error-message-color);
+}
+
+
+
+
+.search-input .container {
+    width: 100%;
+}
+
+.search-input .entryarea {
+    position: relative;
+    height: 50px;
+    line-height: 60px;
+}
+
+.search-input .entry {
+    position: absolute;
+    width: 100%;
+    height: 50px;
+    outline: none;
+    font-size: 1.5rem;
+    padding: 0 20px;
+    line-height: 50px;
+    border-radius: 10px;
+    border: 2px solid #a89faf;
+    box-shadow: 1px 1px 1px 0 #0000003F;
+    background-color: transparent;
+    transition: 0.2s ease;
+    z-index: 1111;
+}
+
+.search-input .entrylabel {
+    position: absolute;
+    font-size: 1.2em;
+    color: #a89faf;
+    padding: 0 15px;
+    margin: -7px 0 0 15px;
+    background: var(--main-color);
+    transition: 0.2s ease;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none
+}
+
+
+
+.search-input .entry:focus,
+.search-input .entry:valid {
+    border: 2px solid var(--font-color);
+    color: var(--font-color);
+}
+
+.search-input .entry:focus+.entrylabel,
+.search-input .entry:valid+.entrylabel {
+    color: var(--font-color);
+    height: 30px;
+    line-height: 30px;
+    padding: 0 12px;
+    transform: translate(-10px, -8px) scale(0.9);
+    z-index: 1111;
+}
+
+
+
+

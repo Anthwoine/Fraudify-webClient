@@ -1,0 +1,41 @@
+input {
+    width: 100%;
+    height: 3px;
+    border-radius: 5px;
+    background: #bcb1d0;
+    -webkit-appearance: none;
+    outline: none;
+    border: none;
+}
+
+.slider:hover {
+    height: 5px;
+}
+
+
+input::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 15px;
+    height: 15px;
+    background: #fff;
+    border-radius: 50%;
+    cursor: pointer;
+    visibility: hidden;
+}
+
+input::-moz-range-thumb {
+    width: 20px;
+    height: 20px;
+    background: #fff;
+    border-radius: 50%;
+    cursor: pointer;
+    visibility: hidden;
+}
+
+input.show-thumb::-webkit-slider-thumb {
+    visibility: visible;
+}
+
+input.show-thumb::-moz-range-thumb {
+    visibility: visible;
+}

@@ -1,0 +1,160 @@
+span.icon {
+    user-select: none;
+}
+
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 300px;
+    padding: 10px 14px;
+    z-index: 100;
+    background: var(--main-color);
+    color: var(--font-color);
+}
+
+.sidebar .search-input {
+    margin-top: 60px;
+
+}
+
+.active {
+    background: var(--main-color-light);
+}
+
+.sidebar.close {
+    width: 90px;
+}
+
+.sidebar.close .text {
+    opacity: 0;
+}
+
+.sidebar .text {
+    font-size: 26px;
+    font-weight: 500;
+    white-space: nowrap;
+    opacity: 1;
+}
+
+.sidebar .image {
+    min-width: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sidebar .menu {
+    margin-top: 35px;
+}
+
+.sidebar .nav-link {
+    margin-top: 15px;
+}
+
+.sidebar li {
+    height: 50px;
+    margin-top: 10px;
+    list-style: none;
+    display: flex;
+    align-items: center;
+}
+
+.sidebar li .icon {
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 60px;
+    font-size: 2rem;
+}
+
+
+
+.sidebar header {
+    position: relative;
+}
+
+.sidebar header .image-text {
+    display: flex;
+    align-items: center;
+}
+
+header .image-text .header-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar li .action-btn:hover {
+    background: #7f6c8f;
+}
+
+.sidebar li .action-btn:hover .icon,
+.sidebar li .action-btn:hover .text {
+    color: black;
+}
+
+.header-text span {
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.header-text .name {
+    font-weight: 600;
+}
+
+.header-text .profession {
+    margin-top: -2px;
+    font-size: 14px;
+}
+
+.header-text {
+    margin-left: 10px;
+}
+
+
+
+
+
+
+.sidebar li .action-btn {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+
+
+
+.sidebar .search-box {
+    border-radius: 6px;
+}
+
+
+
+
+
+
+
+
+
+
+.sidebar .menu-bar {
+    height: calc(100% - 70px);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+
+
+
+

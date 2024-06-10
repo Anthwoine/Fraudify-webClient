@@ -1,0 +1,110 @@
+
+
+.login {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+    width: 100%;
+}
+
+
+.login .submit {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login .button-style {
+    width: 100%;
+    height: 70px;
+    background-color: var(--main-color);
+    color: var(--font-color);
+    border-radius: 0.375rem;
+    font-size: 2rem;
+    transition: ease-in-out 0.2s;
+    margin-top: 50px;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none
+}
+
+.login .button-style:hover {
+    background-color: var(--main-color-light);
+    border: var(--main-color-light);
+}
+
+
+.login .input {
+    width: 700px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-bottom: 50px;
+}
+
+.login .logo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 400px;
+    height: 200px;
+    margin-bottom: 50px;
+}
+
+
+.login .line-container {
+    width: 700px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.login .line-container .line {
+    background-color: var(--main-color);
+    width: 40%;
+    height: 1px;
+}
+
+.login .line-container h2 {
+    color: var(--main-color-light);
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+
+.login .error-message {
+    text-align: center;
+    color:  var(--error-message-color);
+    font-size: 1.5rem;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+
+.login .disc {
+    color: var(--main-color);
+}
+
+.rotate-animation {
+    animation: rotateAnimation 2s ease 1; /* Définit l'animation avec une durée de 2 secondes et une répétition infinie */
+}
+
+@keyframes rotateAnimation {
+    0% {
+        transform: rotate(0deg); /* Début de l'animation avec une rotation de 0 degrés */
+    }
+
+    100% {
+        transform: rotate(360deg); /* Fin de l'animation avec une rotation de 360 degrés */
+    }
+}
