@@ -7,7 +7,11 @@ import {
     Download,
     Compass,
     Library,
-    Heart
+    Heart,
+    Folder,
+    Search,
+    LogOut,
+    UserRound
 } from "lucide-react"
 import InputText from "../input/InputText";
 
@@ -20,6 +24,7 @@ function Sidebar() {
 
     return (
         <nav className="sidebar">
+
             <header>
                 <div className="image-text">
                     <span className="image">
@@ -28,9 +33,9 @@ function Sidebar() {
                             strokeWidth="1.5"
                             className={"disc"}
                             ref={logoRef}
-                            onClick={() =>{
+                            onClick={() => {
                                 console.log("isRotating : ", isRotating)
-                                if(!isRotating) {
+                                if (!isRotating) {
                                     setIsRotating(true)
                                     logoRef.current?.classList.add("rotate-animation")
                                     setTimeout(() => {
@@ -44,32 +49,68 @@ function Sidebar() {
 
                     <div className="text header-text">
                         <span className="name">Fraudify</span>
-                        <span className="profession">Music for everyone</span>
+                        <span className="description">Music for everyone</span>
                     </div>
                 </div>
 
-                <span></span>
+                <div className={"line"}></div>
             </header>
 
-            <InputText
-                entryLabel="Search"
-                entryType="text"
-                reference={searchRef}
-                error={false}
-                className={"search-input"}
-            />
+            <div className={"content"}>
+                <div className={"music menu-container"}>
+                    <div className={"menu-header"}>
+                        <span className={"tittle"}>MUSIC</span>
+                        <div className={"menu-line"}></div>
+                    </div>
+                    <div>
+                        <ul>
+                            <SidebarButton title={"Search"} icon={Search} to={"/browse"}/>
+                            <SidebarButton title={"Home"} icon={Home} to={"/home"}/>
+                        </ul>
+                    </div>
 
-            <div className="menu-bar">
-                <div className="menu">
-                    <ul className="menu-links">
-                        <SidebarButton title="Home" icon={Home} to="/home"/>
-                        <SidebarButton title="Browse" icon={Compass} to="/browse"/>
-                        <SidebarButton title="Download" icon={Download} to="/download"/>
-                        <SidebarButton title="Search" icon={Heart} to="/likes"/>
-                        <SidebarButton title="Your Library" icon={Library} to="/library"/>
-                    </ul>
                 </div>
 
+                <div className={"my-music menu-container"}>
+                    <div className={"menu-header"}>
+                        <span className={"tittle"}>MY MUSIC</span>
+                        <div className={"menu-line"}></div>
+                    </div>
+                    <div>
+                        <ul>
+                            <SidebarButton title={"Liked"} icon={Heart} to={"/likes"}/>
+                            <SidebarButton title={"Local Song"} icon={Folder} to={"/local"}/>
+                            <SidebarButton title={"Your Library"} icon={Library} to={"/library"}/>
+                            <SidebarButton title={"Downloads"} icon={Download} to={"/download"}/>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+
+            <div className={"footer"}>
+                <div className={"line"}></div>
+                <div className={"footer-container"}>
+                    <div className={"user"}>
+                        {
+                            localStorage.getItem("profilePicture") ? (
+                                <img src={localStorage.getItem("profilePicture")} className={"user-image"} alt={"user"}/>
+                            ) : (
+                                <UserRound size={50} strokeWidth={1.5} className={"user-image"}/>
+                            )
+                        }
+                        <div>
+                            <span className={"name"}>{ localStorage.getItem('username') || 'Username' }</span>
+                        </div>
+                    </div>
+                    <div className={"logout-button"}>
+                        <LogOut size={40} strokeWidth={2} className={"icon"} onClick={() => {
+                            localStorage.clear()
+                            window.location.href = "/login"
+                        }}/>
+                    </div>
+
+                </div>
             </div>
         </nav>
     )

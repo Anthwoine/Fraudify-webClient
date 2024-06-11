@@ -5,6 +5,7 @@ import AudioPlayer from "../component/Player/AudioPlayer";
 import { customFetch } from "../util/CustomFetch";
 import CurrentTrackCard from "../component/card/CurrentTrackCard";
 import "./MainLayout.css";
+import PageTitle from "../component/title/PageTitle";
 
 const MainLayout = () => {
     const [currentAudioRequest] = useState("api/track/");
@@ -43,23 +44,34 @@ const MainLayout = () => {
     }, []);
 
     return (
-        <div className="main-layout">
-            <Sidebar />
-            {audioFiles.files.length > 0 ? (
-                <>
-                    <AudioPlayer
-                        audioFile={audioFiles.files[audioFiles.index]}
-                        handleNext={handleNext}
-                        handlePrevious={handlePrevious}
-                    />
-                    <CurrentTrackCard audioFile={audioFiles.files[audioFiles.index]}/>
-                </>
-            ) : (
-                <div>Loading...</div>
-            )}
+        <>
+            <PageTitle title="Fraudify" />
+            <div className="main-layout-wrapper">
+                <div className={"sidebar-container"}>
+                    <Sidebar />
+                </div>
+                <div className={"main-container"}>
+                    <Outlet />
+                </div>
 
-            <Outlet />
-        </div>
+
+
+                {audioFiles.files.length > 0 ? (
+                    <>
+                        <AudioPlayer
+                            audioFile={audioFiles.files[audioFiles.index]}
+                            handleNext={handleNext}
+                            handlePrevious={handlePrevious}
+                        />
+                        <CurrentTrackCard
+                            audioFile={audioFiles.files[audioFiles.index]}
+                        />
+                    </>
+                ) : (
+                    <div>Loading...</div>
+                )}
+            </div>
+        </>
     );
 };
 

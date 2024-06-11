@@ -8,7 +8,7 @@ function CurrentTrackCard({
 
 
   return (
-    <div className="current-track-card">
+    <div className="current-track-card hidden">
       <div className="current-track-card__img">
         <img src="http://localhost:9090/images/default.png" alt="current track" />
       </div>

@@ -8,7 +8,6 @@ function App() {
             <AuthProvider>
                 <RouterProvider router={Router}/>
             </AuthProvider>
-
         </div>
     );
 }

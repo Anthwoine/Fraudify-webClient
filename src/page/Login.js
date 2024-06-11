@@ -40,6 +40,7 @@ function Login() {
                         localStorage.setItem("token", data.token)
                         localStorage.setItem("username", data.username)
                         localStorage.setItem("userId", data.id)
+                        localStorage.setItem("profilePicture", data.profilePicture)
                         window.location.href = "/home"
                     } else {
                         setShowErrorMessage(true)

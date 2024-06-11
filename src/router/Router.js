@@ -57,6 +57,14 @@ const router = createBrowserRouter([
                     </ProtectedRoute>
                 )
             },
+            {
+                path: "local",
+                element: (
+                    <ProtectedRoute>
+                        <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', color: 'black' }}>Local</div>
+                    </ProtectedRoute>
+                )
+            },
             // Redirection de base
             {
                 index: true,

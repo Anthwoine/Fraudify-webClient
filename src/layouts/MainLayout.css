@@ -9,17 +9,29 @@
 
 :root {
     --background-light-color: #f6f6fa;
-    --main-color: #351a4d; /* #211030; */
-    --main-color-light: #aa92b4;
+    --main-color: #1a1335; /* #351a4d; /* #211030; */
+    --main-color-light: #412d82; /*#aa92b4;*/
     --font-color: #fff;
     --error-message-color: #ad0000;
 }
 
-
-
 body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    height: 100vh;
+    margin: 0;
     background: var(--background-light-color);
 }
+
+.main-layout-wrapper {
+    display: grid;
+    grid-template-columns: 250px 1fr;
+    height: 100vh;
+}
+
+.sidebar-container {
+
+}
+
+.main-container {
+    background: green;
+}
+

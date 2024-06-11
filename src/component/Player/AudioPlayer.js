@@ -113,7 +113,7 @@ function AudioPlayer({
                 src={`http://localhost:9090/audio/${audioFile.trackId}.m4a`}>
             </audio>
 
-            <div className="player">
+            <div className="player hidden">
                 <div className="container">
                     <div className="controls">
 

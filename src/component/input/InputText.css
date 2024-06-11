@@ -99,7 +99,7 @@
 .search-input .entry {
     position: absolute;
     width: 100%;
-    height: 50px;
+    height: 40px;
     outline: none;
     font-size: 1.5rem;
     padding: 0 20px;
@@ -108,18 +108,18 @@
     border: 2px solid #a89faf;
     box-shadow: 1px 1px 1px 0 #0000003F;
     background-color: transparent;
-    transition: 0.2s ease;
+    transition: 0.3s ease-in;
     z-index: 1111;
 }
 
 .search-input .entrylabel {
     position: absolute;
-    font-size: 1.2em;
+    font-size: 1em;
     color: #a89faf;
     padding: 0 15px;
-    margin: -7px 0 0 15px;
+    margin: -10px 0 0 15px;
     background: var(--main-color);
-    transition: 0.2s ease;
+    transition: 0.3s ease-out;
     -moz-user-select: none;
     -webkit-user-select: none;
     -ms-user-select: none;
@@ -140,9 +140,24 @@
     height: 30px;
     line-height: 30px;
     padding: 0 12px;
-    transform: translate(-10px, -8px) scale(0.9);
+    transform: translate(-10px, -4px) scale(0.75);
     z-index: 1111;
 }
+
+
+.sidebar .menu-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 14px;
+    z-index: 100;
+    background: var(--main-color);
+    color: var(--font-color);
+}
+
+
+
+
 
 
 
