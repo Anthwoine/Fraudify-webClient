@@ -3,6 +3,7 @@ import { createBrowserRouter, Navigate } from 'react-router-dom';
 import MainLayout from '../layouts/MainLayout';
 import {useAuth} from "../util/AuthContext";
 import Login from "../page/Login";
+import Browse from "../page/Browse";
 
 const ProtectedRoute = ({ children }) => {
     console.log("child", children)
@@ -53,7 +54,7 @@ const router = createBrowserRouter([
                 path: "browse",
                 element: (
                     <ProtectedRoute>
-                        <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', color: 'black' }}>Browse</div>
+                        <Browse />
                     </ProtectedRoute>
                 )
             },

@@ -76,9 +76,8 @@ span.icon {
 
 .sidebar .line {
     height: 1px;
-    width: 100%;
     background: white;
-    margin: 5px 0;
+    margin:5px 10px;
 }
 
 

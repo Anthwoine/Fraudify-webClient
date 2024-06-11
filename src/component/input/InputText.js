@@ -24,7 +24,7 @@ function InputText({ entryLabel, entryType, reference, error, icon, className })
             />
             <div className={`entrylabel`}>
                 {icon}
-                {entryLabel}
+                <span className={"placeholder"}>{entryLabel}</span>
             </div>
         </div>
     </div>
