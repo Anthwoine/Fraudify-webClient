@@ -3,45 +3,29 @@ import { Outlet } from "react-router-dom";
 import Sidebar from "../component/Sidebar/Sidebar";
 import AudioPlayer from "../component/Player/AudioPlayer";
 import { customFetch } from "../util/CustomFetch";
-import CurrentTrackCard from "../component/card/CurrentTrackCard";
 import "./MainLayout.css";
 import PageTitle from "../component/title/PageTitle";
+import { useAudio } from "../context/AudioContext";
 
-const MainLayout = () => {
+const MainLayout = (callback, deps) => {
     const [currentAudioRequest] = useState("api/track/");
-    const [audioFiles, setAudioFiles] = useState({
-        index: 0,
-        files: []
-    });
+    const { currentAudioFile, setPlaylistFiles, playlist } = useAudio();
+
+
+    useEffect(() => {
+        console.log(currentAudioFile)
+    }, [currentAudioFile])
 
     useEffect(() => {
         customFetch(currentAudioRequest)
             .then(response => response.json())
             .then(data => {
-                setAudioFiles({
-                    index: 0,
-                    files: data
-                });
-                console.log("Data : ", data);
-            })
-            .catch(error => {
-                console.log("Error fetch : ", error);
-            });
+                setPlaylistFiles(data);
+                console.log("playlist : ", playlist)
+            }).catch(error => {
+            console.error("Error fetching audio files: ", error);
+        })
     }, [currentAudioRequest]);
-
-    const handleNext = useCallback(() => {
-        setAudioFiles(prevState => ({
-            ...prevState,
-            index: prevState.index + 1 < prevState.files.length ? prevState.index + 1 : 0
-        }));
-    }, []);
-
-    const handlePrevious = useCallback(() => {
-        setAudioFiles(prevState => ({
-            ...prevState,
-            index: prevState.index - 1 >= 0 ? prevState.index - 1 : prevState.files.length - 1
-        }));
-    }, []);
 
     return (
         <>
@@ -56,16 +40,9 @@ const MainLayout = () => {
 
 
 
-                {audioFiles.files.length > 0 ? (
+                {currentAudioFile ? (
                     <>
-                        <AudioPlayer
-                            audioFile={audioFiles.files[audioFiles.index]}
-                            handleNext={handleNext}
-                            handlePrevious={handlePrevious}
-                        />
-                        <CurrentTrackCard
-                            audioFile={audioFiles.files[audioFiles.index]}
-                        />
+                        <AudioPlayer/>
                     </>
                 ) : (
                     <div>Loading...</div>

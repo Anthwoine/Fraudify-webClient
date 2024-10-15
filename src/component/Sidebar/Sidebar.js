@@ -1,11 +1,10 @@
-import React, {useEffect, useRef, useState} from "react"
+import React, { useRef, useState } from "react"
 import SidebarButton from "./Button/SidebarButton"
 import './Sidebar.css'
 import {
     Home,
     Disc3,
     Download,
-    Compass,
     Library,
     Heart,
     Folder,
@@ -13,28 +12,26 @@ import {
     LogOut,
     UserRound
 } from "lucide-react"
-import InputText from "../input/InputText";
 
 
 function Sidebar() {
     const [isRotating, setIsRotating] = useState(false)
 
-    const searchRef = useRef();
     const logoRef = useRef();
 
     return (
         <nav className="sidebar">
 
             <header>
+
                 <div className="image-text">
                     <span className="image">
                         <Disc3
-                            size={50}
-                            strokeWidth="1.5"
+                            size={60}
+                            strokeWidth="2"
                             className={"disc"}
                             ref={logoRef}
                             onClick={() => {
-                                console.log("isRotating : ", isRotating)
                                 if (!isRotating) {
                                     setIsRotating(true)
                                     logoRef.current?.classList.add("rotate-animation")
@@ -49,18 +46,14 @@ function Sidebar() {
 
                     <div className="text header-text">
                         <span className="name">Fraudify</span>
-                        <span className="description">Music for everyone</span>
                     </div>
                 </div>
-
-                <div className={"line"}></div>
             </header>
 
             <div className={"content"}>
                 <div className={"music menu-container"}>
                     <div className={"menu-header"}>
-                        <span className={"tittle"}>MUSIC</span>
-                        <div className={"menu-line"}></div>
+                        <span className={"title"}>MUSIC</span>
                     </div>
                     <div>
                         <ul>
@@ -73,8 +66,7 @@ function Sidebar() {
 
                 <div className={"my-music menu-container"}>
                     <div className={"menu-header"}>
-                        <span className={"tittle"}>MY MUSIC</span>
-                        <div className={"menu-line"}></div>
+                        <span className={"title"}>MY MUSIC</span>
                     </div>
                     <div>
                         <ul>
@@ -89,7 +81,6 @@ function Sidebar() {
 
 
             <div className={"footer"}>
-                <div className={"line"}></div>
                 <div className={"footer-container"}>
                     <div className={"user"}>
                         {

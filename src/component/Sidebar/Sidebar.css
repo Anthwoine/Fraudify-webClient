@@ -5,7 +5,7 @@ span.icon {
 
 .sidebar {
     display: grid;
-    grid-template-rows: 0.5fr 10fr 1.5fr;
+    grid-template-rows: auto 1fr auto;
     height: 100%;
     width: 100%;
     z-index: 100;
@@ -15,10 +15,40 @@ span.icon {
 
 .sidebar header {
     grid-row: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.sidebar .image-text .disc {
+    color: #d93f3f;
+}
+
+.sidebar .image-text .name {
+    font-size: 2.75rem;
+    font-weight: 500;
+    color: #d93f3f;
 }
 
 .sidebar .content {
     grid-row: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+
+.sidebar .menu-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    z-index: 100;
+    color: var(--font-color);
 }
 
 
@@ -84,15 +114,13 @@ span.icon {
 .sidebar .menu-container {
     margin-top: 20px;
     width: 100%;
-
 }
 
 
-
-.sidebar .menu-header .tittle {
+.sidebar .menu-header .title {
     font-size: 18px;
     font-weight: 1000;
-    color: #bfbfcc;
+    color: var(--font-color);
     -moz-user-select: none;
     -webkit-user-select: none;
     -ms-user-select: none;
@@ -160,7 +188,6 @@ span.icon {
 
 .sidebar .user .user-image {
     border-radius: 100%;
-    border: white 2px solid;
     overflow: hidden;
     height: 50px;
     width: 50px;

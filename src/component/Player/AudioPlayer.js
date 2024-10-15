@@ -11,13 +11,10 @@ import {MdPauseCircleFilled} from "react-icons/md";
 import {IoPlayCircle} from "react-icons/io5";
 import {buildDuration} from "../../util/Util";
 import PlayerSlider from "../Slider/PlayerSlider";
+import {useAudio} from "../../context/AudioContext";
 
 
-function AudioPlayer({
-     audioFile,
-     handleNext,
-     handlePrevious
-}) {
+function AudioPlayer() {
     const [isPlaying, setIsPlaying] = useState(false)
     const [currentTime, setCurrentTime] = useState(0)
     const [isSeeking, setIsSeeking] = useState(false)
@@ -27,6 +24,8 @@ function AudioPlayer({
         isMuted: false
     })
 
+    const { currentAudioFile, handleNext, handlePrevious, audioChange } = useAudio()
+
     const audioRef = useRef(null)
 
 
@@ -35,7 +34,6 @@ function AudioPlayer({
     })
 
     useEffect(() => {
-        console.log("Audio file : ", audioFile)
         if (audioRef.current) {
             audioRef.current.pause();
             audioRef.current.load();
@@ -43,7 +41,7 @@ function AudioPlayer({
                 audioRef.current.play();
             }
         }
-    }, [audioFile]);
+    }, [currentAudioFile, audioChange]);
 
 
     const handlePlayPause = () => {
@@ -98,7 +96,7 @@ function AudioPlayer({
         setIsSeeking(false)
     }
 
-    if(!audioFile) return (<div> No audio file </div>)
+    if(!currentAudioFile) return (<div> No audio file </div>)
 
     return (
         <>
@@ -110,10 +108,10 @@ function AudioPlayer({
                 }
                 }
                 onTimeUpdate={handleTimeUpdate}
-                src={`http://localhost:9090/audio/${audioFile.trackId}.m4a`}>
+                src={`http://localhost:9090/audio/${currentAudioFile.trackId}.m4a`}>
             </audio>
 
-            <div className="player hidden">
+            <div className="player">
                 <div className="container">
                     <div className="controls">
 
@@ -240,7 +238,7 @@ function AudioPlayer({
                                 onMouseUp={handleSlideRelease}
                                 onTouchEnd={handleSlideRelease}
                             />
-                        <span className="total-duration">{buildDuration(audioFile.duration)}</span>
+                        <span className="total-duration">{buildDuration(currentAudioFile.duration)}</span>
                     </div>
                 </div>
             </div>

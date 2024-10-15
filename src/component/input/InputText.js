@@ -1,16 +1,14 @@
 import './InputText.css';
 import {useEffect} from "react";
 
-function InputText({ entryLabel, entryType, reference, error, icon, className }) {
+function InputText({ entryLabel, entryType, reference, error, icon, className, inputHandler, value }) {
 
     useEffect(() => {
-        console.log("Error : ", error)
         if(error) {
             reference.current.classList.add("error-input")
         } else {
             reference.current.classList.remove("error-input")
         }
-        console.log(reference.current.classList)
     }, [error, reference]);
 
   return (
@@ -21,6 +19,8 @@ function InputText({ entryLabel, entryType, reference, error, icon, className })
                 type={entryType}
                 ref={reference}
                 required
+                onChange={inputHandler}
+                value={value}
             />
             <div className={`entrylabel`}>
                 {icon}

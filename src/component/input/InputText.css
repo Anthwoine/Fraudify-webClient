@@ -17,21 +17,21 @@
     padding: 0 20px;
     line-height: 80px;
     border-radius: 10px;
-    border: 2px solid #a89faf;
+    border: 2px solid rgba(72, 72, 72);
     box-shadow: 1px 1px 1px 0 #0000003F;
     background-color: transparent;
-    transition: 0.2s ease;
+    transition: 0.3s ease;
     z-index: 1111;
 }
 
 .login-input .entrylabel {
     position: absolute;
     font-size: 1.2em;
-    color: #a89faf;
+    color: rgba(72, 72, 72);
     padding: 0 15px;
     margin: -7px 0 0 15px;
     background: var(--background-light-color);
-    transition: 0.2s ease;
+    transition: 0.3s ease;
     -moz-user-select: none;
     -webkit-user-select: none;
     -ms-user-select: none;
@@ -39,20 +39,20 @@
 }
 
 .login-input .icon {
-    color: rgba(72, 72, 72, 0.5);
-    transition: 0.2s ease;
+    color: rgba(72, 72, 72);
+    transition: 0.3s ease;
     margin-right: 4px;
     transform: translate(0, 5px);
 }
 
 .login-input .entry:focus,
 .login-input .entry:valid {
-    border: 2px solid var(--main-color);
+
 }
 
 .login-input .entry:focus+.entrylabel,
 .login-input .entry:valid+.entrylabel {
-    color: var(--main-color);
+
     height: 30px;
     line-height: 30px;
     padding: 0 12px;
@@ -60,9 +60,14 @@
     z-index: 1111;
 }
 
+.login-input .entry:focus,
+.login-input .entry:valid {
+
+}
+
 .login-input .entry:focus+.entrylabel .icon,
 .login-input .entry:valid+.entrylabel .icon {
-    color: var(--main-color);
+
 }
 
 .login-input .error-input,
@@ -121,7 +126,7 @@
     color: #a89faf;
     padding: 0 15px;
     margin: -10px 0 0 15px;
-    background: var(--background-light-color);
+    background: var(--main-color);
     transition: 0.3s ease-out;
     -moz-user-select: none;
     -webkit-user-select: none;
@@ -129,16 +134,23 @@
     user-select: none
 }
 
+.search-input .icon {
+    color: rgba(72, 72, 72, 0.5);
+    transition: 0.3s ease;
+    margin-right: 4px;
+    transform: translate(0, 5px);
+}
+
 
 
 .search-input .entry:focus,
 .search-input .entry:valid {
-    border: 2px solid var(--main-color);
+    border: 2px solid #fff;
 }
 
 .search-input .entry:focus+.entrylabel,
 .search-input .entry:valid+.entrylabel {
-    color: var(--main-color);
+    color: #fff;
     height: 30px;
     line-height: 30px;
     padding: 0 12px;
@@ -147,18 +159,14 @@
 }
 
 
-.sidebar .menu-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 14px;
-    z-index: 100;
-    background: var(--main-color);
-    color: var(--font-color);
-}
+
 
 .search-input .placeholder {
     margin-left: 4px;
+}
+
+.search-input .entry {
+    color: #fff;
 }
 
 

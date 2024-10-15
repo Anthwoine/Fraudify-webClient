@@ -1,22 +1,25 @@
 import React from 'react';
 import { createBrowserRouter, Navigate } from 'react-router-dom';
 import MainLayout from '../layouts/MainLayout';
-import {useAuth} from "../util/AuthContext";
-import Login from "../page/Login";
+import { useAuth } from "../context/AuthContext";
+import Login from "../page/login/Login";
 import Browse from "../page/Browse";
+import { AudioProvider } from "../context/AudioContext";
+import Error404 from "../page/error/404/Error404";
 
 const ProtectedRoute = ({ children }) => {
-    console.log("child", children)
-    console.log("useauth", useAuth())
     const { isLoggedIn } = useAuth();
-    console.log("isLoggedIn", isLoggedIn)
     return isLoggedIn ? children : <Navigate to="/login" replace />;
 };
 
 const router = createBrowserRouter([
     {
         path: "/",
-        element: <MainLayout />,
+        element: (
+            <AudioProvider>
+                <MainLayout />
+            </AudioProvider>
+        ),
         children: [
             {
                 path: "home",
@@ -76,6 +79,11 @@ const router = createBrowserRouter([
     {
         path: "/login",
         element: <Login />
+    },
+
+    {
+        path: "*",
+        element: <Error404 />
     }
 ]);
 
