@@ -9,8 +9,8 @@ span.icon {
     height: 100%;
     width: 100%;
     z-index: 100;
-    background: var(--main-color);
-    color: var(--font-color);
+    background: #0f1431;
+    color: #fff;
 }
 
 .sidebar header {
@@ -139,11 +139,11 @@ span.icon {
 }
 
 .sidebar .menu-container .action-btn:hover {
-    background: var(--main-color-light);
+    background: #6200ee;
 }
 
 .sidebar .menu-container .active {
-    background: var(--main-color-light);
+    background: #6200ee;
 }
 
 .sidebar .menu-container .action {

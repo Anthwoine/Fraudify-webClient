@@ -3,7 +3,7 @@ import { createBrowserRouter, Navigate } from 'react-router-dom';
 import MainLayout from '../layouts/MainLayout';
 import { useAuth } from "../context/AuthContext";
 import Login from "../page/login/Login";
-import Browse from "../page/Browse";
+import Browse from "../page/search/Browse";
 import { AudioProvider } from "../context/AudioContext";
 import Error404 from "../page/error/404/Error404";
 
@@ -54,7 +54,7 @@ const router = createBrowserRouter([
                 )
             },
             {
-                path: "browse",
+                path: "search",
                 element: (
                     <ProtectedRoute>
                         <Browse />

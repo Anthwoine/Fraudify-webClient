@@ -9,7 +9,7 @@
 
 :root {
     --background-light-color: #ffffff;
-    --main-color: #000000; /* #1a1335; /* #351a4d; /* #211030; */
+    --main-color: #efeaf3; /* #1a1335; /* #351a4d; /* #211030; */
     --main-color-light: rgb(222, 50, 81); /*#412d82; /*#aa92b4;*/
     --font-color: #fff;
     --error-message-color: #ad0000;
@@ -25,14 +25,25 @@ body {
 .main-layout-wrapper {
     display: grid;
     grid-template-columns: 350px 1fr;
+    grid-template-rows: auto 1fr;
     height: 100vh;
     background: var(--main-color);
+
+    .header-container {
+        grid-column: 1 / -1;
+        grid-row: 1;
+    }
+
+    .sidebar-container {
+        grid-column: 1;
+        grid-row: 2;
+    }
+
+    .main-container {
+        grid-column: 2;
+        grid-row: 2;
+    }
 }
 
-.sidebar-container {
 
-}
-
-.main-container {
-}
 

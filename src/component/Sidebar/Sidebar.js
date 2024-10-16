@@ -1,6 +1,6 @@
 import React, { useRef, useState } from "react"
 import SidebarButton from "./Button/SidebarButton"
-import './Sidebar.css'
+import './Sidebar.scss'
 import {
     Home,
     Disc3,
@@ -21,35 +21,6 @@ function Sidebar() {
 
     return (
         <nav className="sidebar">
-
-            <header>
-
-                <div className="image-text">
-                    <span className="image">
-                        <Disc3
-                            size={60}
-                            strokeWidth="2"
-                            className={"disc"}
-                            ref={logoRef}
-                            onClick={() => {
-                                if (!isRotating) {
-                                    setIsRotating(true)
-                                    logoRef.current?.classList.add("rotate-animation")
-                                    setTimeout(() => {
-                                        logoRef.current?.classList.remove("rotate-animation")
-                                        setIsRotating(false)
-                                    }, 2000)
-                                }
-                            }}
-                        />
-                    </span>
-
-                    <div className="text header-text">
-                        <span className="name">Fraudify</span>
-                    </div>
-                </div>
-            </header>
-
             <div className={"content"}>
                 <div className={"music menu-container"}>
                     <div className={"menu-header"}>

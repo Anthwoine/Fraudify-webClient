@@ -44,7 +44,14 @@ function LoginForm() {
     }
 
     return (
-        <div className={"login-form"}>
+        <div
+            className={"login-form"}
+            onKeyDown={(e) => {
+                if(e.key === "Enter") {
+                    authentication()
+                }
+            }}
+        >
             <div className="input">
                 <InputText
                     entryLabel="Username"
