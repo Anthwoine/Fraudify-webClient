@@ -1,5 +1,5 @@
 import PageTitle from "../../component/title/PageTitle"
-import InputText from "../../component/input/InputText"
+import LoginInput from "../../component/input/login/LoginInput"
 import { Search } from "lucide-react"
 import {useCallback, useEffect, useRef, useState} from "react"
 import "./search.scss"

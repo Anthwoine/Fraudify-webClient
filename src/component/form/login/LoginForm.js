@@ -1,4 +1,4 @@
-import InputText from "../../input/InputText";
+import LoginInput from "../../input/login/LoginInput";
 import {CircleUserRound, KeyRound} from "lucide-react";
 import React, {useEffect, useRef, useState} from "react";
 import {login} from "../../../service/AuthService";
@@ -53,7 +53,7 @@ function LoginForm() {
             }}
         >
             <div className="input">
-                <InputText
+                <LoginInput
                     entryLabel="Username"
                     entryType="text"
                     className={"login-input"}
@@ -64,7 +64,7 @@ function LoginForm() {
             </div>
 
             <div className="input">
-                <InputText
+                <LoginInput
                     entryLabel="Password"
                     entryType="password"
                     className={"login-input"}

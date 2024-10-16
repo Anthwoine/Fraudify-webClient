@@ -1,7 +1,7 @@
-import './InputText.css';
+import './loginInput.scss';
 import {useEffect} from "react";
 
-function InputText({ entryLabel, entryType, reference, error, icon, className, inputHandler, value }) {
+function LoginInput({ entryLabel, entryType, reference, error, icon, className, inputHandler, value }) {
 
     useEffect(() => {
         if(error) {
@@ -31,4 +31,4 @@ function InputText({ entryLabel, entryType, reference, error, icon, className, i
   );
 }
 
-export default InputText;
+export default LoginInput;

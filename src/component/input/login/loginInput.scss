@@ -1,0 +1,87 @@
+
+
+.login-input {
+
+    .container {
+        width: 680px;
+    }
+
+    .entryarea {
+        position: relative;
+        height: 65px;
+        line-height: 80px;
+    }
+
+    .entry {
+        position: absolute;
+        width: 100%;
+        height: 65px;
+        outline: none;
+        font-size: 1.5rem;
+        padding: 0 20px;
+        line-height: 80px;
+        border-radius: 10px;
+        border: 2px solid rgba(72, 72, 72);
+        box-shadow: 1px 1px 1px 0 #0000003F;
+        background-color: transparent;
+        transition: 0.3s ease;
+        z-index: 1111;
+    }
+
+    .entrylabel {
+        position: absolute;
+        font-size: 1.2em;
+        color: rgba(72, 72, 72);
+        padding: 0 15px;
+        margin: -7px 0 0 15px;
+        background: var(--background-light-color);
+        transition: 0.3s ease;
+        -moz-user-select: none;
+        -webkit-user-select: none;
+        -ms-user-select: none;
+        user-select: none
+    }
+
+    .icon {
+        color: rgba(72, 72, 72);
+        transition: 0.3s ease;
+        margin-right: 4px;
+        transform: translate(0, 5px);
+    }
+
+    .entry:focus+.entrylabel,
+    .entry:valid+.entrylabel {
+
+        height: 30px;
+        line-height: 30px;
+        padding: 0 12px;
+        transform: translate(-10px, -8px) scale(0.9);
+        z-index: 1111;
+    }
+
+    .error-input,
+    .error-input:focus,
+    .error-input:valid{
+        border: 2px solid var(--error-message-color);
+    }
+
+    .error-input+.entrylabel,
+    .error-input:focus+.entrylabel,
+    .error-input:valid+.entrylabel{
+        color: var(--error-message-color);
+    }
+
+    .error-input+.entrylabel .icon,
+    .error-input:focus+.entrylabel .icon,
+    .error-input:valid+.entrylabel .icon{
+        color: var(--error-message-color);
+    }
+}
+
+
+
+
+
+
+
+
