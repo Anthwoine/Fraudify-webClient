@@ -1,0 +1,25 @@
+.user {
+
+  .user-profil {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding:5px;
+    border-radius: 100%;
+    background-color: rgba(96, 104, 126, 0.34);
+    .user-image {
+      height: 35px;
+      width: 35px;
+      object-fit: cover;
+      border-radius: 50%;
+    }
+  }
+
+  .user-profil:hover {
+    background-color: rgba(96, 104, 126, 0.54);
+    transform: scale(1.05);
+  }
+
+
+}

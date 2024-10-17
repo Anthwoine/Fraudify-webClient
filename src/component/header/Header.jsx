@@ -1,9 +1,10 @@
 import './header.scss'
-import LoginInput from "../input/login/LoginInput";
 import { Disc3, Globe, Home, Download } from "lucide-react";
 import React, {useCallback, useRef, useState} from "react";
 import { Link } from 'react-router-dom';
 import SearchInput from "../input/search/SearchInput";
+import HeaderButton from "../Button/nav/HeaderButton";
+import User from "../user/User";
 
 function Header() {
     const [searchValue, setSearchValue] = useState("");
@@ -47,41 +48,35 @@ function Header() {
             <div className={"search-container"}>
 
                 <div className={"header-nav"}>
-                    <div className={"nav-icon"}>
-                        <Download
-                            size={25}
-                            strokeWidth={2}
 
-                        />
-                    </div>
+                    <HeaderButton
+                        icon={Home}
+                        to={"home"}
+                    />
 
-                    <div className={"nav-icon filled"}>
-                        <Home
-                            size={25}
-                            strokeWidth={2}
+                    <Link to={"/search"}>
+                        <div className="input-container">
+                            <SearchInput/>
+                        </div>
+                    </Link>
 
-                        />
-                    </div>
+                    <HeaderButton
+                        icon={Globe}
+                        to={"search"}
+                    />
 
-                    <div className={"nav-icon"}>
-                        <Globe
-                            size={25}
-                            strokeWidth={2}
-                        />
-                    </div>
+                    <HeaderButton
+                        icon={Download}
+                        to={"download"}
+                    />
                 </div>
 
-                <Link to={"/search"}>
-                    <div className="input-container">
-                        <SearchInput />
-                    </div>
-                </Link>
+
             </div>
 
 
-
             <div className={"user"}>
-                user
+                <User/>
             </div>
         </div>
     )
