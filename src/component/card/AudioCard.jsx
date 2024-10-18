@@ -1,4 +1,4 @@
-import './AudioCard.css';
+import './audioCard.scss';
 import {useAudio} from "../../context/AudioContext";
 
 const photoURL = 'http://127.0.0.1:9090/images/'
@@ -12,12 +12,12 @@ const AudioCard = ({ audio }) => {
 
     return (
         <div
-            className={`card ${currentAudioFile?.trackId === audio.trackId ? 'active' : ''}`}
+            className={`card ${currentAudioFile?.trackId === audio.trackId ? '': ''}`}
             onClick={() => setPlaylistFiles([audio])
             }>
             <div className="card-body">
                 <div className={"audio-image"}>
-                    <img className={"image"} src={`${photoURL}default.png`} alt="audio"/>
+                    <img className={"image"} src={`${photoURL}unnamed.png`} alt="audio"/>
                 </div>
                 <div className={"audio-info"}>
                     <p className={"title"}>{audio.title}</p>

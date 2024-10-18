@@ -1,0 +1,63 @@
+.download-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+    flex-direction: column;
+    padding: 10px;
+    margin: 20px;
+
+  .download-form-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+
+    .image-container {
+      .image {
+        width: 300px;
+        height: 300px;
+      }
+    }
+
+    .download-form-info {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      width: 100%;
+      height: 100%;
+
+      .form-input {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        flex-direction: row;
+        width: 100%;
+      }
+    }
+  }
+}
+
+.form-search-button.rotate {
+  animation: rotate 2s linear infinite;
+}
+
+
+
+@keyframes rotate
+{
+  0% {
+    transform: rotate(0deg); /* Début de l'animation avec une rotation de 0 degrés */
+  }
+
+  100% {
+    transform: rotate(360deg); /* Fin de l'animation avec une rotation de 360 degrés */
+  }
+}
+
+

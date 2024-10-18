@@ -41,10 +41,49 @@ function Browse({ testProps }) {
 
     return (
         <>
-            <PageTitle title="Browse | Fraudify" />
-            <div className="browse">
+            <PageTitle title="Search | Fraudify" />
+            <div className="search">
+                <div className={"container"}>
+                    <div className={"filter-container"}>
+                        <div className={"filter active"}>
+                            <p>Tout</p>
+                        </div>
+
+                        <div className={"filter"}>
+                            <p>Titres</p>
+                        </div>
+
+                        <div className={"filter"}>
+                            <p>Playlists</p>
+                        </div>
+                    </div>
+
+                    <div className={"result-container"}>
+
+                        <div className={"result-section"}>
+
+                            <div className={"section-name"}>
+                                <span className={"name"}>Titres</span>
+                            </div>
+
+                            <div className={"item-container"}>
+                                {audioFiles?.map((audioFile, index) => {
+                                    return (
+                                        <AudioCard
+                                            key={index}
+                                            audio={audioFile}
+                                        />
+                                    );
+                                })}
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
             </div>
         </>
     );
 }
+
 export default Browse;

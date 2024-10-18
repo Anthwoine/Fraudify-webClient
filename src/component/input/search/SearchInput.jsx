@@ -1,5 +1,6 @@
 import './searchInput.scss';
 import { Search } from 'lucide-react';
+
 function SearchInput() {
     return (
         <div className={"search-input"}>

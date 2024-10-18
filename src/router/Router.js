@@ -6,6 +6,8 @@ import Login from "../page/login/Login";
 import Browse from "../page/search/Browse";
 import { AudioProvider } from "../context/AudioContext";
 import Error404 from "../page/error/404/Error404";
+import Download from "../page/download/Download";
+import Home from "../page/home/Home";
 
 const ProtectedRoute = ({ children }) => {
     const { isLoggedIn } = useAuth();
@@ -25,7 +27,7 @@ const router = createBrowserRouter([
                 path: "home",
                 element: (
                     <ProtectedRoute>
-                        <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', color: 'black' }}>Home</div>
+                        <Home />
                     </ProtectedRoute>
                 )
             },
@@ -41,7 +43,7 @@ const router = createBrowserRouter([
                 path: "download",
                 element: (
                     <ProtectedRoute>
-                        <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', color: 'black' }}>Download</div>
+                        <Download />
                     </ProtectedRoute>
                 )
             },
