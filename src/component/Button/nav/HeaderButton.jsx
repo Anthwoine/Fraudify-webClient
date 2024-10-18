@@ -1,17 +1,21 @@
 import { NavLink } from "react-router-dom";
 import {Popover, Typography} from "@mui/material";
-import { useState } from "react";
+import {useRef, useState} from "react";
 import './headerButton.scss';
 
 function HeaderButton({ icon : Icon, to }) {
     const [anchor, setAnchor] = useState(null);
+    const timeoutRef = useRef(null)
 
     const handlePopoverOpen = (event) => {
-            setAnchor(event.currentTarget);
+        setAnchor(event);
     };
 
     const handlePopoverClose = () => {
         setAnchor(null);
+        if (timeoutRef.current) {
+            clearTimeout(timeoutRef.current)
+        }
     };
 
     const open = Boolean(anchor);
@@ -25,7 +29,10 @@ function HeaderButton({ icon : Icon, to }) {
             >
                 <div
                     className={ `nav-icon` }
-                    onMouseEnter={handlePopoverOpen}
+                    onMouseEnter={(event) => {
+                        const target = event.currentTarget;
+                        timeoutRef.current = setTimeout(() => handlePopoverOpen(target), 500)
+                    }}
                     onMouseLeave={handlePopoverClose}
                 >
                     <Icon size={25} strokeWidth={2}/>
@@ -50,7 +57,6 @@ function HeaderButton({ icon : Icon, to }) {
                     vertical: 'top',
                     horizontal: 'center',
                 }}
-                onClose={handlePopoverClose}
                 disableRestoreFocus
             >
                 <div className={"popover-container"}>
