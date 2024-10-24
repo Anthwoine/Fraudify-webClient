@@ -30,6 +30,7 @@ function AudioPlayer() {
 
 
     useEffect(() => {
+        console.log(audioRef)
         audioRef.current.volume = volume.currentVolume
     })
 
@@ -103,9 +104,9 @@ function AudioPlayer() {
             <audio
                 ref={audioRef}
                 onEnded={() => {
-                    handleNext()
-                    setCurrentTime(0)
-                }
+                        handleNext()
+                        setCurrentTime(0)
+                    }
                 }
                 onTimeUpdate={handleTimeUpdate}
                 src={`http://localhost:9090/audio/${currentAudioFile.trackId}.m4a`}>

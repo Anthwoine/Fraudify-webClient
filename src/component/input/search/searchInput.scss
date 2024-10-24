@@ -12,6 +12,11 @@
     width: 500px;
     height: 40px;
 
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+
 
     .search-entry
     {
@@ -45,6 +50,13 @@
     .search-entry:hover
     {
         border: 2px solid #f1f2f6;
+    }
+
+    .search-entry::placeholder {
+      -moz-user-select: none;
+      -webkit-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
     }
 
 

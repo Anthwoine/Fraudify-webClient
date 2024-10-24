@@ -8,6 +8,7 @@ function SearchInput() {
                 className={"search-entry"}
                 placeholder={"Search"}
                 type={"text"}
+                onDrop={(e) => e.preventDefault()}
             />
             <div className={"entry-icon"}>
                 <Search />
