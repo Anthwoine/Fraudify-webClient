@@ -30,42 +30,41 @@ function AudioPlayer() {
 
 
     useEffect(() => {
+        if(!audioRef.current) { return }
         console.log(audioRef)
-        if(audioRef.current) {
-            audioRef.current.volume = volume.currentVolume
-        }
+        audioRef.current.volume = volume.currentVolume
     })
 
     useEffect(() => {
-        if (audioRef.current) {
-            audioRef.current.pause();
-            audioRef.current.load();
-            if (isPlaying) {
-                audioRef.current.play();
-            }
+        if(!audioRef.current) { return }
+        audioRef.current.pause();
+        audioRef.current.load();
+        if (isPlaying) {
+            audioRef.current.play();
         }
     }, [currentAudioFile, audioChange]);
 
 
     const handlePlayPause = () => {
-        if(audioRef.current) {
-            if (isPlaying) {
-                audioRef.current.pause()
-            } else {
-                audioRef.current.play()
-            }
-            setIsPlaying(!isPlaying)
+        if(!audioRef.current) { return }
+        if (isPlaying) {
+            audioRef.current.pause()
+        } else {
+            audioRef.current.play()
         }
+        setIsPlaying(!isPlaying)
+
     }
 
     const handleTimeUpdate = () => {
-        if(!isSeeking && audioRef.current) {
+        if(!audioRef.current) { return }
+        if(!isSeeking) {
             setCurrentTime(audioRef.current.currentTime)
         }
     }
 
     const handleVolumeUpdate = (event) => {
-        if(!audioRef.current) return;
+        if(!audioRef.current) { return }
         const newVolume = parseFloat(event.target.value)
         console.log("New volume : ", newVolume)
         audioRef.current.volume = newVolume
@@ -77,7 +76,7 @@ function AudioPlayer() {
     }
 
     const handleMute = (event) => {
-        if(!audioRef.current) return;
+        if(!audioRef.current) { return }
         setVolume(prevVolume => {
             const newIsMuted = !prevVolume.isMuted
             const newVolume = {
@@ -91,14 +90,14 @@ function AudioPlayer() {
     }
 
     const handleSliderChange = (event) => {
-        if(!audioRef.current) return;
+        if(!audioRef.current) { return }
         const newTime = parseFloat(event.target.value)
         setCurrentTime(newTime)
         setIsSeeking(true)
     }
 
     const handleSlideRelease = (event) => {
-        if(!audioRef.current) return;
+        if(!audioRef.current) { return }
         const newTime = parseFloat(event.target.value)
         audioRef.current.currentTime = newTime
         setCurrentTime(newTime)
