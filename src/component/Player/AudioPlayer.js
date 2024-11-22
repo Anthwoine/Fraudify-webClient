@@ -31,7 +31,9 @@ function AudioPlayer() {
 
     useEffect(() => {
         console.log(audioRef)
-        audioRef.current.volume = volume.currentVolume
+        if(audioRef.current) {
+            audioRef.current.volume = volume.currentVolume
+        }
     })
 
     useEffect(() => {

@@ -45,8 +45,6 @@ const MainLayout = (callback, deps) => {
                     <Outlet />
                 </div>
             </div>
-
-            <AudioPlayer />
         </>
     );
 };

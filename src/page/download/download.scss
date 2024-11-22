@@ -1,8 +1,19 @@
 .download {
   display: flex;
   justify-content: center;
-  align-items: center;
+    align-items: center;
   flex-direction: column;
   background-color: #efeaf3;
   height: 100%;
+
+  .download-container {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+    padding: 10px;
+  }
 }

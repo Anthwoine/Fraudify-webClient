@@ -1,5 +1,5 @@
 import InputText from "../../input/form/InputText";
-import { KeyRound, Music, SquareUser, RefreshCcw } from 'lucide-react';
+import { KeyRound, Music, SquareUser, RefreshCcw, FileDown  } from 'lucide-react';
 import './downloadForm.scss'
 import {useRef} from "react";
 import {getMetadata} from "../../../service/DLPService";
@@ -20,15 +20,20 @@ function DownloadForm() {
 
     const handleUrlSearch = () => {
         search.current.classList.add('rotate');
+
         urlInput.current.disabled = true;
         titleInput.current.disabled = true;
         artistInput.current.disabled = true;
+
         getMetadata(urlInput.current.value).then(response => {
             if(response.status === 200) {
                 response.json().then(data => {
+                    console.log(data);
+                    img.current.src = data.metadata.image ? data.metadata.image : "http://localhost:9090/images/unnamed.png";
                     titleInput.current.value = data.metadata.title;
                     artistInput.current.value = data.metadata.channel;
                 })
+
             } else {
                 urlInput.current.classList.add('error-input');
                 urlIcon.current.classList.add('error-icon');
@@ -39,6 +44,7 @@ function DownloadForm() {
             }
         }).finally(() => {
             search.current.classList.remove('rotate');
+
             urlInput.current.disabled = false;
             titleInput.current.disabled = false;
             artistInput.current.disabled = false;
@@ -62,11 +68,6 @@ function DownloadForm() {
                         <InputText placeholder={"key / url"} icon={<KeyRound className={"form-icon"} ref={urlIcon}/>}
                                    ref={urlInput}
                         />
-                        <RefreshCcw
-                            onClick={handleUrlSearch}
-                            ref={search}
-                            className={"form-search-button"}
-                        />
                     </div>
 
                     <div className={"form-input"}>
@@ -81,16 +82,17 @@ function DownloadForm() {
                         />
                     </div>
 
-                    <div className={"form-download"}>
-                        <button
-                            className={"download-button"}
-                            onClick={() => {
-                                getMetadata(urlInput.current.value).then(response => {
-                                    response.json().then(data => {
-                                        console.log(data)
-                                    })
-                            })}}
-                        >Download</button>
+                    <div className={"form-button"}>
+                        <RefreshCcw
+                            onClick={handleUrlSearch}
+                            ref={search}
+                            className={"form-search-button"}
+                        />
+
+                        <div className={"download-button button"}>
+                            <FileDown className={"form-download-button"}/>
+                            {" Download"}
+                        </div>
                     </div>
 
                 </div>
