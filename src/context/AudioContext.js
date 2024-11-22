@@ -4,7 +4,7 @@ const AudioContext = createContext();
 
 export const AudioProvider = ({ children }) => {
     const [playlist, setPlaylist] = useState({ index: 0, files: [] });
-    const [currentAudioFile, setCurrentAudioFile] = useState("_nrpxowbIYY.m4a");
+    const [currentAudioFile, setCurrentAudioFile] = useState(null);
     const [audioChange, setAudioChange] = useState(Math.random());
 
     const setAudioFile = useCallback((audioFile) => {

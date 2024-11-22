@@ -1,7 +1,6 @@
-import React, { useEffect, useState, useCallback } from "react";
+import React, { useEffect, useState } from "react";
 import { Outlet } from "react-router-dom";
 import Sidebar from "../component/Sidebar/Sidebar";
-import AudioPlayer from "../component/Player/AudioPlayer";
 import { customFetch } from "../util/CustomFetch";
 import "./MainLayout.scss";
 import PageTitle from "../component/title/PageTitle";
